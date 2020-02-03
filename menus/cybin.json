@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle cybin",
+        "command": "cybin:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "cybin",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "cybin:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
