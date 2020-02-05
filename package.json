@@ -6,7 +6,13 @@
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "cybin:toggle"
+    "atom-text-editor": [
+      "cybin:eval",
+      "cybin:evalBlock"
+    ],
+    "atom-workspace": [
+      "cybin:toggle"
+    ]
   },
   "repository": "https://github.com/atom/cybin",
   "license": "MIT",

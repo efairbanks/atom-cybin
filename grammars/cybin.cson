@@ -1,0 +1,164 @@
+'comment': 'Cybin Syntax: version 0.8'
+'fileTypes': [
+  'cybin'
+]
+'firstLineMatch': '\\A#!.*?\\bcybin\\b'
+'name': 'Cybin'
+'patterns': [
+  {
+    'captures':
+      '1':
+        'name': 'keyword.control.cybin'
+      '2':
+        'name': 'entity.name.function.scope.cybin'
+      '3':
+        'name': 'entity.name.function.cybin'
+      '4':
+        'name': 'punctuation.definition.parameters.begin.cybin'
+      '5':
+        'name': 'variable.parameter.function.cybin'
+      '6':
+        'name': 'punctuation.definition.parameters.end.cybin'
+    'match': '\\b(function)(?:\\s+([a-zA-Z_.:]+[.:])?([a-zA-Z_]\\w*)\\s*)?(\\()([^)]*)(\\))'
+    'name': 'meta.function.cybin'
+  }
+  {
+    'match': '(?<![\\d.])\\s0x[a-fA-F\\d]+|\\b\\d+(\\.\\d+)?([eE]-?\\d+)?|\\.\\d+([eE]-?\\d+)?'
+    'name': 'constant.numeric.cybin'
+  }
+  {
+    'begin': '\''
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.cybin'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.cybin'
+    'name': 'string.quoted.single.cybin'
+    'patterns': [
+      {
+        'include': 'punctuation.definition.string.begin.cybin'
+      }
+      {
+        'include': 'punctuation.definition.string.end.cybin'
+      }
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escape.cybin'
+      }
+    ]
+  }
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.cybin'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.cybin'
+    'name': 'string.quoted.double.cybin'
+    'patterns': [
+      {
+        'include': 'punctuation.definition.string.begin.cybin'
+      }
+      {
+        'include': 'punctuation.definition.string.end.cybin'
+      }
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escape.cybin'
+      }
+    ]
+  }
+  {
+    'begin': '(?<=\\.cdef)\\s*(\\[(=*)\\[)'
+    'beginCaptures':
+      '0':
+        'name': 'string.quoted.other.multiline.cybin'
+      '1':
+        'name': 'punctuation.definition.string.begin.cybin'
+    'contentName': 'meta.embedded.cybin'
+    'end': '(\\]\\2\\])'
+    'endCaptures':
+      '0':
+        'name': 'string.quoted.other.multiline.cybin'
+      '1':
+        'name': 'punctuation.definition.string.end.cybin'
+    'patterns': [
+      {
+        'include': 'source.c'
+      }
+    ]
+  }
+  {
+    'begin': '(?<!--)\\[(=*)\\['
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.cybin'
+    'end': '\\]\\1\\]'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.cybin'
+    'name': 'string.quoted.other.multiline.cybin'
+  }
+  {
+    'begin': '--\\[(=*)\\['
+    'captures':
+      '0':
+        'name': 'punctuation.definition.comment.cybin'
+    'end': '\\]\\1\\]'
+    'name': 'comment.block.cybin'
+  }
+  {
+    'begin': '(^[ \\t]+)?(?=--(?!\\[(=*)\\[))'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.whitespace.comment.leading.cybin'
+    'end': '(?!\\G)'
+    'patterns': [
+      {
+        'begin': '--'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.cybin'
+        'end': '\\n'
+        'name': 'comment.line.double-dash.cybin'
+      }
+    ]
+  }
+  {
+    'match': '\\b(and|or|not|break|do|else|for|if|elseif|return|then|repeat|while|until|end|function|local|in|goto)\\b'
+    'name': 'keyword.control.cybin'
+  }
+  {
+    'match': '(?<![^.]\\.|:)\\b([A-Z_]+|false|nil|true|math\\.(pi|huge))\\b|(?<![.])\\.{3}(?!\\.)'
+    'name': 'constant.language.cybin'
+  }
+  {
+    'match': '(?<![^.]\\.|:)\\b(self)\\b'
+    'name': 'variable.language.self.cybin'
+  }
+  {
+    'match': '(?<![^.]\\.|:)\\b(assert|collectgarbage|dofile|error|getfenv|getmetatable|ipairs|loadfile|loadstring|module|next|pairs|pcall|print|rawequal|rawget|rawset|require|select|setfenv|setmetatable|tonumber|tostring|type|unpack|xpcall)\\b(?=\\s*(?:[({"\']|\\[\\[))'
+    'name': 'support.function.cybin'
+  }
+  {
+    'match': '(?<![^.]\\.|:)\\b(coroutine\\.(create|resume|running|status|wrap|yield)|string\\.(byte|char|dump|find|format|gmatch|gsub|len|lower|match|rep|reverse|sub|upper)|table\\.(concat|insert|maxn|remove|sort)|math\\.(abs|acos|asin|atan2?|ceil|cosh?|deg|exp|floor|fmod|frexp|ldexp|log|log10|max|min|modf|pow|rad|random|randomseed|sinh?|sqrt|tanh?)|io\\.(close|flush|input|lines|open|output|popen|read|tmpfile|type|write)|os\\.(clock|date|difftime|execute|exit|getenv|remove|rename|setlocale|time|tmpname)|package\\.(cpath|loaded|loadlib|path|preload|seeall)|debug\\.(debug|[gs]etfenv|[gs]ethook|getinfo|[gs]etlocal|[gs]etmetatable|getregistry|[gs]etupvalue|traceback))\\b(?=\\s*(?:[({"\']|\\[\\[))'
+    'name': 'support.function.library.cybin'
+  }
+  {
+    'match': '\\b([A-Za-z_]\\w*)\\b(?=\\s*(?:[({"\']|\\[\\[))'
+    'name': 'support.function.any-method.cybin'
+  }
+  {
+    'match': '(?<=[^.]\\.|:)\\b([A-Za-z_]\\w*)'
+    'name': 'variable.other.cybin'
+  }
+  {
+    'match': '\\+|-|%|#|\\*|\\/|\\^|==?|~=|<=?|>=?|(?<!\\.)\\.{2}(?!\\.)'
+    'name': 'keyword.operator.cybin'
+  }
+]
+'scopeName': 'source.cybin'

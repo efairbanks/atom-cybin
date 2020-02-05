@@ -1,22 +1,22 @@
 {
-  "context-menu": {
-    "atom-text-editor": [
-      {
-        "label": "Toggle cybin",
-        "command": "cybin:toggle"
-      }
-    ]
-  },
   "menu": [
     {
       "label": "Packages",
       "submenu": [
         {
-          "label": "cybin",
+          "label": "Cybin",
           "submenu": [
             {
               "label": "Toggle",
               "command": "cybin:toggle"
+            },
+            {
+              "label": "Evaluate",
+              "command": "cybin:eval"
+            },
+            {
+              "label": "Evaluate Block",
+              "command": "cybin:evalBlock"
             }
           ]
         }

@@ -1,5 +1,10 @@
 {
-  "atom-workspace": {
-    "ctrl-alt-o": "cybin:toggle"
+  "atom-workspace atom-text-editor[data-grammar~='cybin']": {
+    "ctrl-alt-o": "cybin:toggle",
+    "shift-enter": "cybin:eval",
+    "cmd-enter": "cybin:evalBlock",
+    "ctrl-enter": "cybin:evalBlock",
+    "shift-cmd-h": "cybin:hush",
+    "shift-ctrl-h": "cybin:hush"
   }
 }
