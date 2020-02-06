@@ -1,0 +1,19 @@
+os.execute('jack_connect cybin:audio-out_1 system:playback_1')
+os.execute('jack_connect cybin:audio-out_2 system:playback_2')
+
+function T()
+  local phase=0
+  return function(d,f)
+    phase=phase+1/cybin.samplerate
+    while phase>d do phase=phase-d;f() end
+  end
+end
+
+t=T()
+freq=440
+function __process()
+  t(1/4,function() print(cybin.time,freq);freq=math.random()*220+220 end)
+  return math.sin(cybin.time*freq*math.pi*2)
+end
+
+function __process() return 0 end
