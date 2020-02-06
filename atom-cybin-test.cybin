@@ -15,5 +15,3 @@ function __process()
   t(1/4,function() print(cybin.time,freq);freq=math.random()*220+220 end)
   return math.sin(cybin.time*freq*math.pi*2)
 end
-
-function __process() return 0 end
