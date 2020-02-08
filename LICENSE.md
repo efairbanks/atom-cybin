@@ -1,4 +1,6 @@
-Copyright (c) 2020 <Your name here>
+Copyright (c) 2020 Eris Fairbanks
+Grammar based on language-lua by FireZenk <firezenk@gmail.com> (2014)
+https://github.com/FireZenk/language-lua/
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

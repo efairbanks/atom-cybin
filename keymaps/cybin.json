@@ -1,7 +1,7 @@
 {
   "atom-workspace atom-text-editor[data-grammar~='cybin']": {
-    "shift-ctrl-c": "cybin:toggle",
-    "shift-cmd-c": "cybin:toggle",
+    "shift-ctrl-c": "cybin:boot",
+    "shift-cmd-c": "cybin:boot",
     "shift-enter": "cybin:eval",
     "cmd-enter": "cybin:evalBlock",
     "ctrl-enter": "cybin:evalBlock",
