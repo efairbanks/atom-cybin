@@ -1,7 +1,7 @@
 {
   "name": "cybin",
   "main": "./lib/cybin",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "An Atom plugin for Cybin.",
   "keywords": [],
   "activationCommands": {
