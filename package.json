@@ -8,16 +8,18 @@
     "atom-text-editor": [
       "cybin:eval",
       "cybin:evalBlock",
+      "cybin:render",
       "cybin:hush"
     ],
-    "atom-workspace": [
-      "cybin:toggle"
-    ]
+    "atom-workspace": []
   },
   "repository": "https://github.com/efairbanks/atom-cybin",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "moment": "^2.25.3",
+    "open": "^7.0.3"
+  }
 }

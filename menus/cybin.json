@@ -7,16 +7,20 @@
           "label": "Cybin",
           "submenu": [
             {
-              "label": "Toggle",
-              "command": "cybin:toggle"
-            },
-            {
-              "label": "Evaluate",
+              "label": "Evaluate (shift-enter)",
               "command": "cybin:eval"
             },
             {
-              "label": "Evaluate Block",
+              "label": "Evaluate Block (ctrl/cmd-enter)",
               "command": "cybin:evalBlock"
+            },
+            {
+              "label": "Hush (shift-ctrl/cmd-enter)",
+              "command": "cybin:hush"
+            },
+            {
+              "label": "Render (shift-ctrl-R)",
+              "command": "cybin:render"
             }
           ]
         }

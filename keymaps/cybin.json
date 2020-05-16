@@ -6,6 +6,7 @@
     "cmd-enter": "cybin:evalBlock",
     "ctrl-enter": "cybin:evalBlock",
     "shift-cmd-h": "cybin:hush",
-    "shift-ctrl-h": "cybin:hush"
+    "shift-ctrl-h": "cybin:hush",
+    "shift-ctrl-r": "cybin:render"
   }
 }
